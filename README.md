@@ -1,0 +1,1 @@
+# plugin-open-graph-generator
