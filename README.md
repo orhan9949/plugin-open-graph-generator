@@ -66,6 +66,7 @@ Originally tested with GD, but due to limitations in text rendering and image qu
 Can be extended for additional post types and taxonomies with minimal code changes
 
 На русском.
+
 Генерация картинок для Open Graph в Wordpress.
 Добавление OG картинок через Rank Math для facebook и twitter через хуки.
 Добавление сгенерированных картинок для одного типа постов и для тэгов через хуки.
