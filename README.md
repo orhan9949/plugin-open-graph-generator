@@ -1,3 +1,71 @@
+WordPress OG Image Generator Plugin
+
+Custom WordPress plugin for automatic Open Graph image generation using ImageMagick.
+Integrates with Rank Math via hooks to provide dynamic OG images for posts, custom post types, and tags.
+
+🚀 Features
+
+Automatic OG image generation for specific post types and tags
+
+Integration with Rank Math via add_action() and add_filter()
+
+Uses ImageMagick for better image quality (initially tested GD, but replaced)
+
+Prevents duplicate overwrites of generated images
+
+Organized structure for background images and fonts
+
+Extendable: easily add new methods for more taxonomies or post types
+
+📂 Project Structure
+plugin-folder/
+│── fonts/                 # Font files
+│── backgrounds/           # Background images
+│── og-image-generator.php # Main plugin file (class + hooks)
+
+🛠️ Main Class Overview
+
+__construct() – registers hooks with add_action and add_filter
+
+word_wrap_imagick() – prepares and formats text for OG image
+
+generate_image() – main image generation logic
+
+generate_image_post_tag() – OG images for tags
+
+generate_image_cryptocurrency() – OG images for custom post type cryptocurrency
+
+allow_picture_overwrite() – prevents unnecessary overwrites
+
+check_save_img_path() / generate_save_img_path() – manages image paths
+
+rank_math_opengraph_image() – sets OG image depending on page
+
+check_page_post_tag() / check_page_cryptocurrency() – validate and return images
+
+⚙️ Installation
+
+Copy the plugin folder into wp-content/plugins/
+
+Activate via WordPress Admin → Plugins
+
+Make sure ImageMagick extension is enabled in PHP
+
+📸 Example Workflow
+
+Add a new post or tag → Plugin generates OG image automatically
+
+Rank Math detects the generated image via filters
+
+Facebook/Twitter share preview shows the new OG image
+
+📖 Notes
+
+Originally tested with GD, but due to limitations in text rendering and image quality, switched to ImageMagick
+
+Can be extended for additional post types and taxonomies with minimal code changes
+
+
 Генерация картинок для Open Graph в Wordpress.
 Добавление OG картинок через Rank Math для facebook и twitter через хуки.
 Добавление сгенерированных картинок для одного типа постов и для тэгов через хуки.
